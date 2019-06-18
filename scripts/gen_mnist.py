@@ -38,7 +38,7 @@ eps = 1e-5
 txt_name = 'gt.txt'
 metric_dir = 'metric' if arg.metric == 1 else ''
 data_dir = path.join('data', task)
-input_dir = path.join(data_dir, 'MNIST', 'processed')
+input_dir = path.join(data_dir, 'processed')
 output_dir = path.join(data_dir, 'pt', metric_dir)
 output_input_dir = path.join(output_dir, 'input')
 utils.rmdir(output_input_dir); utils.mkdir(output_input_dir)
