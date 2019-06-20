@@ -117,7 +117,8 @@ o.dim_y_p = 4
 o.dim_Y_s = 1 * o.h * o.w
 o.dim_Y_a = o.D * o.h * o.w
 # Set GPU number
-o.G = 1 if o.metric == 1 else torch.cuda.device_count() # get GPU number
+# o.G = 1 if o.metric == 1 else torch.cuda.device_count() # get GPU number
+o.G = torch.cuda.device_count() # get GPU number
 assert o.N % o.G == 0, 'Please ensure the mini-batch size can be divided by the GPU number'
 o.n = round(o.N / o.G)
 print("Total batch size: %d, GPU number: %d, GPU batch size: %d" % (o.N, o.G, o.n))
